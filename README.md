@@ -55,6 +55,7 @@ It was developed as part of an academic program to showcase modern security prac
 
 * **Login Page with Project Info**
 
+![Image](https://github.com/user-attachments/assets/0ca5cf29-4ab4-46c2-a888-e42b24bf58fa)
 
 ![Secure Login Screenshot](https://i.postimg.cc/Y0GmN0Nf/secure-login.jpg)
 
