@@ -58,6 +58,7 @@ It was developed as part of an academic program to showcase modern security prac
 
 
 
+
 * **Enable MFA with QR Code**
   ![MFA Setup](docs/mfa-setup.png)
 
