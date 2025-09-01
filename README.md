@@ -56,16 +56,10 @@ It was developed as part of an academic program to showcase modern security prac
 * **Login Page with Project Info**
 
 
-
 ![Secure Login Screenshot](https://i.postimg.cc/Y0GmN0Nf/secure-login.jpg)
 
+image 
 
-[![secure-login.jpg](https://i.postimg.cc/Y0GmN0Nf/secure-login.jpg)](https://postimg.cc/T5xwfR4p)
-
-![Secure Login Screenshot](./screenshot/secure_login.jpg)
-
-
-![Secure Login Screenshot](https://github.com/ArcRobot-Researchcenter/Secure-Login-System-with-Multifactor-Authentication/blob/main/screenshot/secure_login.jpg?raw=true)
 
 
 
