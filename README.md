@@ -54,7 +54,8 @@ It was developed as part of an academic program to showcase modern security prac
 ## 📸 Screenshots
 
 * **Login Page with Project Info**
- ![Secure Login Screenshot](screenshot/secure%20login.jpg)
+![Secure Login Screenshot](screenshot/secure_login.jpg)
+
 
 
 * **Enable MFA with QR Code**
