@@ -1,70 +1,85 @@
+
 # Secure Login System with Multifactor Authentication (Flask + TOTP)
 
-A production‑minded starter kit that demonstrates a **secure username/password login** with
-**Time‑based One‑Time Passwords (TOTP)** for multifactor authentication, **backup codes**, and basic **rate limiting**, built with **Flask** and **SQLite**.
+This project demonstrates the **Design and Implementation of a Secure Login System using Multifactor Authentication (MFA)**.
+It was developed as part of an academic program to showcase modern security practices for user authentication.
 
-## Features
-- User registration with **email verification rules** (via WTForms validators).
-- Password hashing using **bcrypt (passlib)**.
-- **MFA (TOTP)** enable/verify flow with QR code provisioning (scan in Google Authenticator, Authy, Microsoft Authenticator, etc.).
-- **Backup codes** (hashed-at-rest) to recover if TOTP device is lost.
-- **Rate limiting** on login and TOTP verify endpoints.
-- **CSRF protection** on all forms.
-- Minimal **audit log** (login success/failure, MFA enable, etc.).
-- Clean Bootstrap‑lite UI.
 
-> This is an educational starter. Review, extend, and harden before production (e.g., HTTPS, CSP, secure cookies, account lockout, email/pass recovery, device management, WebAuthn/passkeys, etc.).
+## 🔑 Features
 
-## Quickstart
+* User **registration** and **login** with password hashing (bcrypt).
+* **TOTP-based MFA** (compatible with Google Authenticator, Microsoft Authenticator, Authy, etc.).
+* **QR Code provisioning** for easy MFA setup.
+* **Backup codes** (hashed at rest) to recover accounts if the device is lost.
+* **Rate limiting** on login and MFA verification to block brute force.
+* **Audit logging** of security events (login, logout, MFA enable/fail).
+* Clean **Bootstrap-based UI** with project info displayed.
 
-```bash
-# 1) Create & activate a venv (recommended)
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# macOS/Linux:
-# source .venv/bin/activate
 
-# 2) Install dependencies
-pip install -r requirements.txt
+## 🚀 Quickstart
 
-# 3) Run the app
+1. Clone the repo:
 
-python run.py
+   ```bash
+   git clone https://github.com/ArcRobot-Researchcenter/mfa-secure-login.git
+   cd mfa-secure-login
+   ```
 
-Open your browser:
-👉 http://127.0.0.1:5000
+2. Create & activate a virtual environment:
 
-Login flow (after enabling MFA):
-1. Enter email + password.
-2. If credentials are valid and MFA is enabled, you'll be asked for a **6‑digit TOTP**.
-3. Alternatively, use **one backup code** (each can be used once).
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate   # Windows
+   # or
+   source .venv/bin/activate   # macOS/Linux
+   ```
 
-## Default Security Settings
-- Cookies: `SESSION_COOKIE_HTTPONLY=True`, `SESSION_COOKIE_SAMESITE='Lax'`.
-- Forms protected by WTForms CSRF.
-- Rate limiting: **5/minute** on `/login` and `/verify-2fa` per IP.
+3. Install dependencies:
 
-## Project Structure
-```
-app/
-  __init__.py
-  config.py
-  models.py
-  auth.py
-  utils/
-    security.py
-  templates/
-    base.html
-    register.html
-    login.html
-    dashboard.html
-    setup_mfa.html
-    verify_2fa.html
-  static/
-    css/styles.css
-requirements.txt
-run.py
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+4. Run the server:
+
+   ```bash
+   python run.py
+   ```
+
+5. Open your browser:
+   👉 [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+---
+
+## 📸 Screenshots
+
+* **Login Page with Project Info**
+  ![Login Page](docs/login-page.png)
+
+* **Enable MFA with QR Code**
+  ![MFA Setup](docs/mfa-setup.png)
+
+---
+
+## 🔒 Security Notes
+
+* This is a **demo/academic project**.
+* For production use:
+
+  * Enforce HTTPS.
+  * Use a stronger session store (Redis, DB) instead of in-memory limiter.
+  * Add email verification & password reset flows.
+  * Consider WebAuthn/Passkeys for phishing-resistant MFA.
+
+---
+
+## 📚 References
+
+* [RFC 6238: TOTP Algorithm](https://www.rfc-editor.org/rfc/rfc6238)
+* [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+* [Flask Documentation](https://flask.palletsprojects.com/)
+
+---
+
+✨ *This project is part of academic research and demonstration of secure authentication practices.*
 
