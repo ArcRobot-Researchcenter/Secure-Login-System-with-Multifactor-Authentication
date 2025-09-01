@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="overlay shadow-lg">
+      <div class="row">
+        <!-- Login Card -->
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h3 class="mb-3">Login</h3>
+              <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                  {{ form.email.label(class="form-label") }}
+                  {{ form.email(class="form-control", placeholder="you@example.com") }}
+                </div>
+                <div class="mb-3">
+                  {{ form.password.label(class="form-label") }}
+                  {{ form.password(class="form-control") }}
+                </div>
+                <div class="mb-3 form-check">
+                  {{ form.remember(class="form-check-input") }}
+                  {{ form.remember.label(class="form-check-label") }}
+                </div>
+                {{ form.submit(class="btn btn-primary w-100") }}
+                <a href="{{ url_for('auth.register') }}" class="btn btn-link w-100 mt-2">Create account</a>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Info -->
+        <div class="col-md-6 text-center d-flex flex-column justify-content-center">
+          <h2 class="fw-bold text-primary"> A SECURE LOGIN SYSTEM USING MULTIFACTOR AUTHENTICATION</h2>
+          <p class="lead mt-3">Group Members / Matric Numbers:</p>
+          <ul class="list-unstyled">
+            <li>1. ADEYEMO ALIMOT ABIOLA — 2330120012</li>
+            <li>2. MATTHEW DEBORAH BOLAJI — 2330120015</li>
+          </ul>
+          <p><strong>Supervisor:</strong> MRS OLANIYAN</p>
+          <p class="mt-4">
+            Developed by <strong>Alex Raji</strong>, 
+            <a href="https://academicprojectworld.com/" target="_blank" class="fw-bold text-decoration-none">ARC ROBOTICS LTD</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

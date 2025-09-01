@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-6">
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <h3 class="mb-3">Enable Two-Factor (TOTP)</h3>
+        <ol>
+          <li>Install an authenticator app (Google Authenticator, Authy, Microsoft Authenticator, etc.).</li>
+          <li>Scan the QR code below or enter the secret manually.</li>
+          <li>Enter the 6-digit code to confirm enabling.</li>
+        </ol>
+        <div class="text-center my-3">
+          <img src="{{ url_for('auth.mfa_qr') }}" alt="MFA QR" class="img-fluid border p-2 bg-white">
+        </div>
+        <p><strong>Manual secret:</strong> <code>{{ secret }}</code></p>
+
+        <!-- Flask-WTF form with CSRF -->
+        <form method="POST">
+          {{ form.hidden_tag() }}
+          <div class="mb-3">
+            {{ form.token.label(class="form-label") }}
+            {{ form.token(class="form-control", placeholder="123456") }}
+          </div>
+          {{ form.submit(class="btn btn-primary") }}
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    {% if backup_codes %}
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="mb-2">Backup Codes</h4>
+        <p class="text-muted">Save these in a safe place. Each can be used once.</p>
+        <pre class="bg-light p-3">{{ "\n".join(backup_codes) }}</pre>
+      </div>
+    </div>
+    {% else %}
+    <div class="alert alert-info">After enabling MFA, your backup codes will appear here once (copy them!).</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
