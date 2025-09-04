@@ -57,22 +57,10 @@ It was developed as part of an academic program to showcase modern security prac
 
 ![Secure Login Screenshot](https://cdn.jsdelivr.net/gh/ArcRobot-Researchcenter/Secure-Login-System-with-Multifactor-Authentication@main/screenshot/secure_login.jpg)
 
-![Secure Login Screenshot](https://raw.githack.com/ArcRobot-Researchcenter/Secure-Login-System-with-Multifactor-Authentication/main/screenshot/secure_login.jpg)
+![Secure Login Screenshot](https://cdn.jsdelivr.net/gh/ArcRobot-Researchcenter/Secure-Login-System-with-Multifactor-Authentication@main/screenshot/Two-factor%20enable.jpg)
 
+![Secure Login Screenshot](https://cdn.jsdelivr.net/gh/ArcRobot-Researchcenter/Secure-Login-System-with-Multifactor-Authentication@main/screenshot/Two%E2%80%91Factor%20Verification.jpg)
 
-![Image](https://github.com/user-attachments/assets/0ca5cf29-4ab4-46c2-a888-e42b24bf58fa)
-
-![Secure Login Screenshot](https://i.postimg.cc/Y0GmN0Nf/secure-login.jpg)
-
-image 
-
-
-
-
-* **Enable MFA with QR Code**
-  ![MFA Setup](docs/mfa-setup.png)
-
----
 
 ## 🔒 Security Notes
 
